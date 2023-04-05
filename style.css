@@ -1,34 +1,29 @@
-#operation {
-  height: 35vh;
-  position: relative;
-}
 
 .input__numbers {
-  display: inline-block;
   width: 100%;
   border: hidden;
-  background-color: #fff;
   color: #000;
-  position: absolute;
-  bottom: 0;
-  right: 8px;
-  outline: none;
+  outline: none;  
+  max-height: 10rem;
+  font-size: 3rem;
+  background-color: #fff;
 }
 
 .input__numbers,
 ::placeholder {
-  font-size: 3rem;
-  font-weight: 600;
+  font-weight: 500;
   text-align: right;
   font-family: sans-serif;
+  letter-spacing: 0.3rem;
 }
 
 /* Buttons */
 
 #buttons-section {
   background-color: #000;
-  height: 65vh;
-  overflow: scroll;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 .row {
@@ -43,7 +38,7 @@
   background-color: rgba(255, 255, 255, 0.17);
 }
 
-input {
+.col input {
   background: none;
   display: inline-block;
   color: #fff;
@@ -51,4 +46,3 @@ input {
   padding: 1.8rem 1rem;
   border: none;
 }
-
