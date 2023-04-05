@@ -11,7 +11,7 @@
 
 .input__numbers,
 ::placeholder {
-  font-weight: 500;
+  font-weight: 600;
   text-align: right;
   font-family: sans-serif;
   letter-spacing: 0.3rem;
@@ -20,7 +20,7 @@
 /* Buttons */
 
 #buttons-section {
-  background-color: #000;
+  background-color: #191825;
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -31,18 +31,20 @@
 }
 
 .col {
-  border: 1px solid #fff;
-}
-
-.col:hover {
-  background-color: rgba(255, 255, 255, 0.17);
+  border: 1.5px solid rgb(255, 68, 0);
+  border-radius: 100%;
 }
 
 .col button {
   background: none;
   color: #fff;
   width: 100%;
-  padding: 1.8rem 1rem;
+  padding: 0.5rem 0.5rem;
   border: none;
   font-size: 2rem;
+  font-weight: bold;
+}
+
+.equal {
+  background-color: orangered;
 }

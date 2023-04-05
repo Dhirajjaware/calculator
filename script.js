@@ -6,21 +6,12 @@ const input = document.querySelector(".input__numbers");
 
 const equal = document.querySelector(".equal");
 
-// Play Sound
+const btnBackSpace = document.querySelector(".btn__backspace");
 
-const playSound = function (sound) {
-  new Audio(sound).play();
-};
+// Play Sound
 
 containerBtns.addEventListener("click", function (e) {
   if (!e.target.value) return;
-
-  e.target.addEventListener(
-    "click",
-    playSound(
-      "sounds/zapsplat_office_calculator_button_single_press_003_81853.mp3"
-    )
-  );
 
   const btnValue = e.target.value;
 
@@ -30,6 +21,10 @@ containerBtns.addEventListener("click", function (e) {
   if (btnValue === "AC") {
     input.value = "";
   }
+
+  if (btnValue === "back") {
+    console.log("i");
+  }
 });
 
 equal.addEventListener("click", function () {
@@ -37,6 +32,9 @@ equal.addEventListener("click", function () {
 
   const result = eval(input.value);
 
-  console.log(result);
-  input.value = `=${result}`;
+  input.value = result;
 });
+
+// btnBackSpace.addEventListener("click", function () {
+  
+// });
