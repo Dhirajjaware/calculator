@@ -1,0 +1,54 @@
+#operation {
+  height: 35vh;
+  position: relative;
+}
+
+.input__numbers {
+  display: inline-block;
+  width: 100%;
+  border: hidden;
+  background-color: #fff;
+  color: #000;
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  outline: none;
+}
+
+.input__numbers,
+::placeholder {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: right;
+  font-family: sans-serif;
+}
+
+/* Buttons */
+
+#buttons-section {
+  background-color: #000;
+  height: 65vh;
+  overflow: scroll;
+}
+
+.row {
+  text-align: center;
+}
+
+.col {
+  border: 1px solid #fff;
+}
+
+.col:hover {
+  background-color: rgba(255, 255, 255, 0.17);
+}
+
+input {
+  background: none;
+  display: inline-block;
+  color: #fff;
+  width: 100%;
+  padding: 1.8rem 1rem;
+  border: none;
+}
+
