@@ -35,6 +35,9 @@ equal.addEventListener("click", function () {
   input.value = result;
 });
 
-// btnBackSpace.addEventListener("click", function () {
-  
-// });
+// Remove last character
+btnBackSpace.addEventListener("click", function () {
+  const str = input.value;
+
+  input.value = str.slice(0, -1);
+});

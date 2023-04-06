@@ -1,9 +1,8 @@
-
 .input__numbers {
   width: 100%;
   border: hidden;
   color: #000;
-  outline: none;  
+  outline: none;
   max-height: 10rem;
   font-size: 3rem;
   background-color: #fff;
@@ -28,10 +27,7 @@
 
 .row {
   text-align: center;
-}
-
-.col {
-  /* border: 1.5px solid rgb(255, 68, 0); */
+  
 }
 
 .col button {
@@ -42,8 +38,11 @@
   border: none;
   font-size: 2rem;
   font-weight: bold;
+
 }
 
-.equal {
-  background-color: orangered;
+i {
+  position: relative;
+  z-index: -1;
+
 }
