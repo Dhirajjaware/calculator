@@ -31,8 +31,7 @@
 }
 
 .col {
-  border: 1.5px solid rgb(255, 68, 0);
-  border-radius: 100%;
+  /* border: 1.5px solid rgb(255, 68, 0); */
 }
 
 .col button {
