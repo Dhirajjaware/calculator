@@ -1,13 +1,12 @@
 'use strict';
 
-const containerBtns = document.querySelector('.container__buttons');
+const btnContainer = document.querySelector('.container__buttons');
 const input = document.querySelector('.input__numbers');
 const equal = document.querySelector('.equal');
 const btnBackSpace = document.querySelector('.btn__backspace');
 const canvasContainer = document.querySelector('.offcanvas-body');
 const btnClearHistory = document.querySelector('.btn-clear');
 
-// creating date
 const now = new Date();
 const date = Intl.DateTimeFormat(navigator.language, {
   year: 'numeric',
@@ -27,35 +26,33 @@ class App extends History {
   history = [];
   constructor() {
     super();
-    containerBtns.addEventListener('click', this.showBtnValue.bind(this));
-    equal.addEventListener('click', this.calculateValue.bind(this));
-    btnBackSpace.addEventListener('click', this.backSpaceValue.bind(this));
+    btnContainer.addEventListener('click', this.renderNumber.bind(this));
+    equal.addEventListener('click', this.calculate.bind(this));
+    btnBackSpace.addEventListener('click', this.backspace.bind(this));
     this.getLocalStorage();
     btnClearHistory.addEventListener('click', this.clearHistory.bind(this));
   }
 
-  showBtnValue(e) {
+  renderNumber(e) {
     if (!e.target.value) return;
 
     const btnValue = e.target.value;
 
+    //render num
     input.value += btnValue;
 
-    if (btnValue === 'AC') {
-      input.value = '';
-    }
+    //Clear input fields
+    if (btnValue === 'AC') input.value = '';
   }
 
-  calculateValue() {
+  calculate() {
     let holdHistory = [];
-
     holdHistory.push(input.value);
 
     setTimeout(() => {
       if (!input.value) return;
 
       const result = eval(input.value);
-
       input.value = result;
 
       const dataHistory = new History(...holdHistory, result);
@@ -63,18 +60,18 @@ class App extends History {
       this.history.push(dataHistory);
 
       // Set localStorage
-      this.setlocalStorage();
+      this.setLocalStorage();
 
-      this.reanderHistory(dataHistory);
-    }, 100);
+      this.renderHistory(dataHistory);
+    }, 0);
   }
 
-  backSpaceValue() {
+  backspace() {
     const str = input.value;
     input.value = str.slice(0, -1);
   }
 
-  reanderHistory(history) {
+  renderHistory(history) {
     const html = `
     <div class="d-flex justify-content-between">
      <p>${history.calculation}</p>
@@ -86,18 +83,17 @@ class App extends History {
     canvasContainer.insertAdjacentHTML('beforeend', html);
   }
 
-  setlocalStorage() {
+  setLocalStorage() {
     localStorage.setItem('history', JSON.stringify(this.history));
   }
 
   getLocalStorage() {
     const data = JSON.parse(localStorage.getItem('history'));
-
     if (!data) return;
 
     this.history = data;
 
-    this.history.forEach((his) => this.reanderHistory(his));
+    this.history.forEach((el) => this.renderHistory(el));
   }
 
   clearHistory() {

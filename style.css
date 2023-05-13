@@ -27,7 +27,6 @@
 
 .row {
   text-align: center;
-  
 }
 
 .col button {
@@ -38,11 +37,15 @@
   border: none;
   font-size: 2rem;
   font-weight: bold;
-
 }
 
 i {
   position: relative;
   z-index: -1;
+  color: purple;
+}
 
+.offcanvas-body {
+  background-color: purple;
+  color: #fff;
 }
